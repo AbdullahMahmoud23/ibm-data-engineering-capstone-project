@@ -1,0 +1,22 @@
+# Environments and Secrets
+.env
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Data Files (Keep repo size small)
+*.csv
+*.tar
+*.gz
+*.log
+*.sql
+
+# Airflow Specific
+airflow/logs/
+airflow/airflow.db
+airflow/airflow-webserver.pid
+
+# OS Generated Files
+.DS_Store
+Thumbs.db

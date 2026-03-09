@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Operational Database (OLTP)
+  mysql-oltp:
+    image: mysql:8.0
+    container_name: capstone-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sales
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # Analytical Data Warehouse (OLAP)
+  postgres-warehouse:
+    image: postgres:15
+    container_name: capstone-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: staging
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  mysql_data:
+  postgres_data:
