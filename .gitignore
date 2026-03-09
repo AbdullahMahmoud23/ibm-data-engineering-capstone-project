@@ -5,12 +5,6 @@ env/
 __pycache__/
 *.pyc
 
-# Data Files (Keep repo size small)
-*.csv
-*.tar
-*.gz
-*.log
-*.sql
 
 # Airflow Specific
 airflow/logs/

@@ -1,0 +1,16 @@
+[2026-03-09T00:24:20.424+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_web_log.extract_data manual__2026-03-09T00:24:15.325684+00:00 [queued]>
+[2026-03-09T00:24:20.455+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_web_log.extract_data manual__2026-03-09T00:24:15.325684+00:00 [queued]>
+[2026-03-09T00:24:20.457+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2026-03-09T00:24:20.497+0000] {taskinstance.py:2214} INFO - Executing <Task(BashOperator): extract_data> on 2026-03-09 00:24:15.325684+00:00
+[2026-03-09T00:24:20.528+0000] {standard_task_runner.py:60} INFO - Started process 409 to run task
+[2026-03-09T00:24:20.542+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'process_web_log', 'extract_data', 'manual__2026-03-09T00:24:15.325684+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/process_web_log.py', '--cfg-path', '/tmp/tmpfinagj1k']
+[2026-03-09T00:24:20.555+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask extract_data
+[2026-03-09T00:24:20.823+0000] {task_command.py:423} INFO - Running <TaskInstance: process_web_log.extract_data manual__2026-03-09T00:24:15.325684+00:00 [running]> on host a18b1f26c762
+[2026-03-09T00:24:21.463+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='businesselyamany@gmail.com' AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='process_web_log' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-09T00:24:15.325684+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-09T00:24:15.325684+00:00'
+[2026-03-09T00:24:21.481+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-09T00:24:21.485+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cut -d" " -f1 /opt/***/dags/accesslog.txt > /opt/***/dags/extracted_data.txt']
+[2026-03-09T00:24:21.556+0000] {subprocess.py:86} INFO - Output:
+[2026-03-09T00:24:22.008+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-03-09T00:24:22.157+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=process_web_log, task_id=extract_data, execution_date=20260309T002415, start_date=20260309T002420, end_date=20260309T002422
+[2026-03-09T00:24:22.291+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-09T00:24:22.388+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

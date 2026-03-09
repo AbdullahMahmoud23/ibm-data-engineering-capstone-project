@@ -1,0 +1,16 @@
+[2026-03-09T00:22:42.990+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_web_log.transform_data manual__2026-03-09T00:22:12.818389+00:00 [queued]>
+[2026-03-09T00:22:43.085+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_web_log.transform_data manual__2026-03-09T00:22:12.818389+00:00 [queued]>
+[2026-03-09T00:22:43.087+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2026-03-09T00:22:43.164+0000] {taskinstance.py:2214} INFO - Executing <Task(BashOperator): transform_data> on 2026-03-09 00:22:12.818389+00:00
+[2026-03-09T00:22:43.204+0000] {standard_task_runner.py:60} INFO - Started process 383 to run task
+[2026-03-09T00:22:43.241+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'process_web_log', 'transform_data', 'manual__2026-03-09T00:22:12.818389+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/process_web_log.py', '--cfg-path', '/tmp/tmpt1mp72os']
+[2026-03-09T00:22:43.276+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask transform_data
+[2026-03-09T00:22:43.801+0000] {task_command.py:423} INFO - Running <TaskInstance: process_web_log.transform_data manual__2026-03-09T00:22:12.818389+00:00 [running]> on host a18b1f26c762
+[2026-03-09T00:22:44.182+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='businesselyamany@gmail.com' AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='process_web_log' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-09T00:22:12.818389+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-09T00:22:12.818389+00:00'
+[2026-03-09T00:22:44.197+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-09T00:22:44.205+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'grep -v "198.46.149.143" /opt/***/dags/extracted_data.txt > /opt/***/dags/transformed_data.txt']
+[2026-03-09T00:22:44.278+0000] {subprocess.py:86} INFO - Output:
+[2026-03-09T00:22:44.422+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-03-09T00:22:44.677+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=process_web_log, task_id=transform_data, execution_date=20260309T002212, start_date=20260309T002243, end_date=20260309T002244
+[2026-03-09T00:22:44.936+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-09T00:22:45.120+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check
