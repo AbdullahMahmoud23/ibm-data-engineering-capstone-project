@@ -1,0 +1,54 @@
+-----------------------------------------------------------------------------
+# Check if you have the 'mongoimport' and 'mongoexport' 
+
+>> mongoimport --version
+>> mongoexport --version
+>> sudo apt-get update
+>> sudo apt-get install mongo-tools -y
+-----------------------------------------------------------------------------
+# Download the catalog.json
+
+>> wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/nosql/catalog.json
+-----------------------------------------------------------------------------
+# Import the catalog.json file into MongoDB, using catalog as the database and electronics as the collection
+
+>> mongoimport --db catalog --collection electronics --file catalog.json
+-----------------------------------------------------------------------------
+
+------ Open ==> MongoDB Command Line Backup Tools ------
+
+# List out all the databases available in your MongoDB server.
+
+>> show dbs
+-----------------------------------------------------------------------------
+# List out all the collections present in the MongoDB database named catalog
+
+>>  use catalog
+>>  show collections
+-----------------------------------------------------------------------------
+# Create an index on the type field in the electronics collection of the catalog database
+
+>>  db.electronics.createIndex({ "type": 1 })
+-----------------------------------------------------------------------------
+# Write a query to count documents with type equal to laptop in the electronics collection.
+
+>> db.electronics.countDocuments({ "type": "laptop" })
+-----------------------------------------------------------------------------
+# Write a query to find the number of smart phones with screen size of 6 inches
+
+>> db.electronics.countDocuments({ "type": "smart phone", "screen size": 6 })
+-----------------------------------------------------------------------------
+# Write a query to find out the average screen size of smart phones.
+
+>> db.electronics.aggregate([
+...     { $match: { "type": "smart phone" } },
+...     { $group: { _id: null, average_screen_size: { $avg: "$screen size" } } }
+... ])
+-----------------------------------------------------------------------------
+------------------ IN Terminal ------------------
+
+# Export the fields _id, type, model, from the electronics collection into a file named electronics.csv
+
+>> mongoexport --db catalog --collection electronics --type=csv --fields _id,type,model --out electronics.csv
+
+
